@@ -1,4 +1,4 @@
-const CACHE = "swimcuts-en-v15";
+const CACHE = "swimcuts-en-v16";
 const ASSETS = ["./", "./index.html", "./standards.json", "./manifest.webmanifest", "./icon.svg"];
 self.addEventListener("install", e => {
   e.waitUntil(caches.open(CACHE).then(c => c.addAll(ASSETS)).then(() => self.skipWaiting()));
