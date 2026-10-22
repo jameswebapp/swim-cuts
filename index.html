@@ -308,7 +308,7 @@ function update(){
   const lad=$("ladder");lad.innerHTML="";
   const rows=[...ev.ladder];
   let mePlaced=false;
-  const meRow=()=>{const d=document.createElement("div");d.className="meLine";d.innerHTML="<span>▶ Your time</span><span class='tm'>"+fmt(t)+"</span><span style='margin-left:auto'>"+(ev.highest?ev.highest.label:"No cut yet")+"</span>";return d};
+  const meRow=()=>{const d=document.createElement("div");d.className="meLine";d.innerHTML="<span>▶ Your time · "+(ev.highest?ev.highest.label:"No cut yet")+"</span><span class='tm' style='margin-left:auto'>"+fmt(t)+"</span>";return d};
   rows.forEach(r=>{
     if(t!=null&&!mePlaced&&r.timeSec<t){lad.appendChild(meRow());mePlaced=true}
     const d=document.createElement("div");
