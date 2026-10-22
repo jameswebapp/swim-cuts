@@ -1,0 +1,19 @@
+{
+  "background_color": "#f0f9ff",
+  "description": "Enter a swim time and instantly see where it lands across Motivational, MD, Eastern Zone, NCSA, Futures and Juniors standards.",
+  "display": "standalone",
+  "icons": [
+    {
+      "purpose": "any",
+      "sizes": "any",
+      "src": "icon.svg",
+      "type": "image/svg+xml"
+    }
+  ],
+  "name": "Swim Cuts — Time Standards Ladder",
+  "orientation": "portrait",
+  "scope": ".",
+  "short_name": "Swim Cuts",
+  "start_url": ".",
+  "theme_color": "#0369a1"
+}

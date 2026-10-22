@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+<meta name="theme-color" content="#0369a1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>Swim Cuts · Time Standards Ladder</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icon.svg">
+<style>
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+:root{--blue:#0284c7;--deep:#0c4a6e;--sky:#e0f2fe;--ink:#0f172a;--mut:#64748b;--ok:#059669;--line:#e2e8f0;--card:#fff}
+html,body{margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(180deg,#f0f9ff,#f8fafc 240px);color:var(--ink);padding-bottom:env(safe-area-inset-bottom)}
+header{position:sticky;top:0;z-index:20;background:linear-gradient(135deg,#0369a1,#0891b2);color:#fff;padding:calc(10px + env(safe-area-inset-top)) 16px 12px;box-shadow:0 2px 12px rgba(3,105,161,.25)}
+header h1{margin:0;font-size:20px;letter-spacing:.5px}
+header p{margin:2px 0 0;font-size:12px;opacity:.85}
+main{max-width:560px;margin:0 auto;padding:12px 12px 32px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:12px;margin-bottom:12px;box-shadow:0 1px 3px rgba(15,23,42,.04)}
+.rowlab{font-size:11px;color:var(--mut);margin:8px 2px 6px;font-weight:600;letter-spacing:.4px}
+.rowlab:first-child{margin-top:0}
+.seg{display:flex;background:#f1f5f9;border-radius:12px;padding:3px;position:relative}
+.seg button{flex:1;border:0;background:transparent;padding:9px 4px;font-size:14px;border-radius:9px;color:var(--mut);font-weight:600;cursor:pointer;transition:color .18s;position:relative;z-index:1;min-height:42px}
+.seg button.on{color:#fff}
+.seg .thumb{position:absolute;top:3px;bottom:3px;border-radius:9px;background:var(--blue);transition:transform .25s cubic-bezier(.4,1.4,.4,1),width .25s;z-index:0;box-shadow:0 2px 6px rgba(2,132,199,.4)}
+.ageRow{display:flex;align-items:center;gap:10px}
+.ageBtn{width:48px;height:48px;border-radius:50%;border:1px solid var(--line);background:#f8fafc;font-size:22px;cursor:pointer;color:var(--deep);font-weight:700}
+.ageBtn:active{transform:scale(.92)}
+.ageVal{flex:1;text-align:center}
+.ageVal b{font-size:22px}
+.ageVal span{display:block;font-size:11px;color:var(--mut)}
+.chips{display:flex;flex-wrap:wrap;gap:7px}
+.chip{border:1px solid var(--line);background:#f8fafc;border-radius:999px;padding:9px 13px;font-size:14px;font-weight:600;color:var(--ink);cursor:pointer;min-height:42px;transition:transform .12s,background .15s,color .15s}
+.chip:active{transform:scale(.94)}
+.chip.on{background:var(--deep);color:#fff;border-color:var(--deep)}
+.timeDisp{text-align:center;padding:6px 0 2px}
+.timeDisp .t{font-size:46px;font-weight:800;font-variant-numeric:tabular-nums;letter-spacing:1px;color:var(--deep);min-height:56px}
+.timeDisp .t.empty{color:#cbd5e1}
+.timeDisp .hint{font-size:12px;color:var(--mut)}
+.tRow{display:flex;align-items:center;justify-content:center;gap:8px}
+input.t{border:0;background:transparent;text-align:center;width:78%;font-family:inherit;cursor:text;border-bottom:2px dashed #bae6fd;border-radius:0;padding:0 0 2px}
+input.t:focus{outline:none;border-bottom-color:var(--blue)}
+input.t::placeholder{color:#cbd5e1}
+#clearTime{border:1px solid var(--line);background:#f1f5f9;color:var(--mut);width:38px;height:38px;border-radius:50%;font-size:15px;cursor:pointer;flex:none}
+#clearTime:active{transform:scale(.92)}
+.tabs{display:flex;gap:8px;margin-bottom:12px}
+.tabs button{flex:1;border:1px solid var(--line);background:#fff;border-radius:13px;padding:12px;font-size:15.5px;font-weight:800;color:var(--mut);cursor:pointer;transition:background .18s,color .18s,transform .1s}
+.tabs button:active{transform:scale(.97)}
+.tabs button.on{background:var(--deep);color:#fff;border-color:var(--deep)}
+.tabPage{display:none}
+.tabPage.on{display:block;animation:tabIn .25s cubic-bezier(.4,1,.4,1)}
+@keyframes tabIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.refs{margin:0;padding-left:18px;font-size:12.5px;line-height:1.75;color:#334155}
+.refs a{color:var(--blue);text-decoration:none;font-weight:600}
+.refs li{margin-bottom:5px}
+.result{text-align:center}
+.badge{display:inline-block;font-size:30px;font-weight:900;padding:8px 22px;border-radius:999px;background:linear-gradient(135deg,#059669,#34d399);color:#fff;box-shadow:0 4px 14px rgba(5,150,105,.35);will-change:transform}
+.badge.none{background:#e2e8f0;color:var(--mut);box-shadow:none}
+.badge.pop{animation:pop .3s cubic-bezier(.3,1.6,.5,1)}
+@keyframes pop{0%{transform:scale(.7)}100%{transform:scale(1)}}
+.nextLine{margin-top:9px;font-size:15px}
+.nextLine b{color:var(--deep)}
+.gapNum{font-variant-numeric:tabular-nums;font-weight:800;color:#dc2626}
+.barWrap{height:12px;background:#f1f5f9;border-radius:99px;margin:12px 4px 4px;overflow:hidden}
+.bar{height:100%;border-radius:99px;background:linear-gradient(90deg,#38bdf8,#0284c7);width:0%;transition:width .3s cubic-bezier(.4,1,.4,1)}
+.barLab{display:flex;justify-content:space-between;font-size:11px;color:var(--mut);margin:0 4px}
+.ladder{margin-top:6px}
+.rung{display:flex;align-items:center;gap:9px;padding:9px 10px;border-radius:11px;margin-bottom:5px;background:#f8fafc;border:1px solid transparent;transition:background .2s,border-color .2s,opacity .2s}
+.rung .nm{flex:1;font-size:13.5px;font-weight:600;line-height:1.25}
+.rung .tm{font-variant-numeric:tabular-nums;font-weight:700;font-size:14px}
+.rung .st{width:56px;text-align:right;font-size:12px;font-weight:700}
+.rung.hit{background:#ecfdf5;border-color:#a7f3d0}
+.rung.hit .st{color:var(--ok)}
+.rung.next{border-color:#fca5a5;background:#fef2f2}
+.rung.next .st{color:#dc2626}
+.rung.miss{opacity:.62}
+.rung.miss .st{color:var(--mut)}
+.meLine{display:flex;align-items:center;gap:9px;padding:8px 10px;margin-bottom:5px;border-radius:11px;background:var(--deep);color:#fff;font-weight:700;font-size:13.5px;transition:transform .3s cubic-bezier(.4,1,.4,1),opacity .3s}
+.meLine .tm{font-variant-numeric:tabular-nums}
+.addBtn{width:100%;border:0;background:var(--blue);color:#fff;font-size:16px;font-weight:800;border-radius:14px;padding:14px;cursor:pointer;box-shadow:0 3px 10px rgba(2,132,199,.35);transition:transform .1s,opacity .2s}
+.addBtn:active{transform:scale(.97)}
+.addBtn:disabled{opacity:.35;box-shadow:none}
+.entry{display:flex;align-items:center;gap:10px;padding:11px 12px;border:1px solid var(--line);border-radius:13px;margin-bottom:8px;background:#fff;will-change:transform}
+.entry .ev{font-weight:800;font-size:14px}
+.entry .tm{font-variant-numeric:tabular-nums;color:var(--mut);font-size:13px}
+.entry .lv{margin-left:auto;text-align:right}
+.entry .lv b{color:var(--ok);font-size:15px}
+.entry .lv span{display:block;font-size:11px;color:var(--mut)}
+.entry .del{border:0;background:#fef2f2;color:#dc2626;width:38px;height:38px;border-radius:50%;font-size:16px;cursor:pointer;flex:none}
+.emptyNote{color:var(--mut);font-size:13px;text-align:center;padding:8px}
+footer{max-width:560px;margin:0 auto;padding:0 16px 30px;font-size:11px;color:var(--mut);line-height:1.6}
+.sortRow{display:flex;gap:8px;align-items:center;margin-bottom:8px}
+.sortRow span{font-size:12px;color:var(--mut);font-weight:600}
+.sortRow button{border:1px solid var(--line);background:#f8fafc;border-radius:999px;padding:6px 12px;font-size:12.5px;font-weight:700;cursor:pointer}
+.sortRow button.on{background:var(--deep);color:#fff}
+</style>
+</head>
+<body>
+<header><h1>🏊 Swim Cuts</h1><p>See where your kid's time lands</p></header>
+<main>
+  <nav class="tabs"><button id="tabBtnMain" class="on">🏊 Check a Time</button><button id="tabBtnRefs">📚 References</button></nav>
+  <div id="pageMain" class="tabPage on">
+  <section class="card" id="controls">
+    <div class="rowlab">Gender / Age (age on the first day of the meet)</div>
+    <div style="display:flex;gap:10px;align-items:stretch">
+      <div class="seg" id="segGender" style="flex:1.2"><span class="thumb"></span><button data-v="M" class="on">Boys</button><button data-v="F">Girls</button></div>
+      <div class="ageRow" style="flex:1">
+        <button class="ageBtn" id="ageMinus">−</button>
+        <div class="ageVal"><b id="ageVal">11</b><span id="ageGrpLab">11-12 group</span></div>
+        <button class="ageBtn" id="agePlus">+</button>
+      </div>
+    </div>
+    <div class="rowlab">Motivational basis</div>
+    <div class="seg" id="segMode"><span class="thumb"></span><button data-v="group" class="on">Age Group</button><button data-v="single">Single Age</button></div>
+    <div class="rowlab">Course</div>
+    <div class="seg" id="segCourse"><span class="thumb"></span><button data-v="SCY" class="on">SCY (yards)</button><button data-v="SCM">SCM (meters)</button><button data-v="LCM">LCM (meters)</button></div>
+    <div class="rowlab">Stroke</div>
+    <div class="chips" id="strokeChips"></div>
+    <div class="rowlab">Distance</div>
+    <div class="chips" id="distChips"></div>
+  </section>
+
+  <section class="card" id="timeCard">
+    <div class="timeDisp">
+      <div class="tRow"><input class="t empty" id="timeDisp" type="text" inputmode="numeric" autocomplete="off" autocapitalize="off" placeholder="--.--" aria-label="Time"><button id="clearTime" type="button" aria-label="Clear">✕</button></div>
+      <div class="hint">Tap the time and type · Auto-splits into min : sec (type 2850 → 28.50, 12667 → 1:26.67)</div>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="result">
+      <div class="badge none" id="badge">Enter a time</div>
+      <div class="nextLine" id="nextLine"></div>
+      <div class="barWrap"><div class="bar" id="bar"></div></div>
+      <div class="barLab"><span id="barLeft"></span><span id="barRight"></span></div>
+    </div>
+    <div class="ladder" id="ladder"></div>
+    <div style="height:10px"></div>
+    <button class="addBtn" id="addBtn" disabled>＋ Add this time to the list</button>
+  </section>
+
+  <section class="card">
+    <div class="rowlab" style="margin-top:0">Session list (stored only on this device, never uploaded)</div>
+    <div class="sortRow"><span>Sort</span><button id="sortRank" class="on">By level</button><button id="sortClose">Closest to next cut</button><button id="clearList" style="margin-left:auto">Clear all</button></div>
+    <div id="entries"><div class="emptyNote">No times yet — enter one above and add it</div></div>
+  </section>
+  </div><!-- /pageMain -->
+
+  <div id="pageRefs" class="tabPage">
+  <section class="card">
+    <div class="rowlab" style="margin-top:0">References · Source for every standard set (ladder shows QT cuts only, Bonus standards removed)</div>
+    <ul class="refs">
+      <li><b>Motivational (Age Group + Single Age)</b> — USA Swimming, <i>2024-2028 National Age Group / Single Age Motivational Time Standards</i>, official PDF revised 2025-10-10. Links: <a href="https://www.usaswimming.org/times/time-standards" target="_blank" rel="noopener">USA Swimming official standards page</a> · <a href="https://www.gomotionapp.com/catcc/UserFiles/Image/QuickUpload/2028-usa-motivational-scy_080685.pdf" target="_blank" rel="noopener">SCY standards PDF</a> · <a href="https://swimstandards.com/national/quad" target="_blank" rel="noopener">SwimStandards cross-check</a></li>
+      <li><b>MD Champs / MD Jr Champs</b> — Maryland Swimming, <i>2026 Maryland LSC Championships Qualifying Times</i> and the 2026 Junior Championships meet announcements (Site 1 / Site 2, Mar 2026). Links: <a href="http://www.opsthammerheads.org/recdsaopst/UserFiles/Image/QuickUpload/2025---2026-mdlsc-scy-championship-meet-qualifyingtimes-sr-champs-14-u-champs-1--007673_052207.pdf" target="_blank" rel="noopener">SCY Champs standards</a> · <a href="https://www.gomotionapp.com/md/UserFiles/Image/QuickUpload/2026-long-course-cut-times-1-_091328.pdf" target="_blank" rel="noopener">LCM standards</a> · <a href="https://www.gomotionapp.com/md/UserFiles/Image/QuickUpload/lcq-2026---final_023418.pdf" target="_blank" rel="noopener">Jr Champs / LCQ document</a></li>
+      <li><b>EZ Age Group Champs (SC / LC)</b> — Eastern Zone Swimming, <i>2026 Eastern Zone Age Group Championships Qualifying Times</i>, official QT tables. Links: <a href="https://www.ctswim.org/Customer-Content/www/Meets/SC2025-26/March/2026-eastern-zone-age-group-championships-meet-announcement_060363.pdf" target="_blank" rel="noopener">Short-course meet announcement</a> · <a href="https://www.ctswim.org/Customer-Content/www/CMS/files/meets/2026_LC_Meets/2026_EZ_LC_Age_Group_Champs_FINAL_updated.pdf" target="_blank" rel="noopener">Long-course meet announcement</a></li>
+      <li><b>EZ Sectionals</b> — <i>2026 Eastern Zone Speedo Sectional Qualifying Times</i> (meet: Mar 26-29, 2026, St. Mary's, MD). Link: <a href="https://www.niagaraswim.org/eznslsc/UserFiles/Image/QuickUpload/speedo-sectional-qualifying-times-2026_000714.pdf" target="_blank" rel="noopener">Official standards PDF</a></li>
+      <li><b>NCSA Age Group</b> — <i>2026 NCSA Age Group Swimming Championships</i> meet announcement (Orlando, Mar 25-28, 2026); NCSA has announced the standards are unchanged for 2027. Links: <a href="https://www.hinsdaleswimming.org/ishsc/UserFiles/Image/QuickUpload/2025-26-ncsa-spring-age-group-championships-time-standards_021639.pdf" target="_blank" rel="noopener">Standards PDF</a> · <a href="https://swimstandards.com/ncsa/age-group-times" target="_blank" rel="noopener">SwimStandards cross-check</a></li>
+      <li><b>NCSA Juniors (Spring / Summer)</b> — <i>2026 NCSA Spring Swimming Championships Time Standards</i> and the <i>2026 NCSA Summer Swimming Championships</i> meet announcement (18&amp;U). Links: <a href="https://www.memphistigerswimming.com/semts/UserFiles/Image/QuickUpload/2026-ncsa-jr-time-standards_049965.pdf" target="_blank" rel="noopener">Spring standards PDF</a> · <a href="https://swimstandards.com/data/2026-ncsa-summer-championship-meet-announcement-sanctioned_081104.pdf" target="_blank" rel="noopener">Summer meet announcement PDF</a></li>
+      <li><b>Futures</b> — USA Swimming, <i>2026 Futures Championships Time Standards</i>, official table (18&amp;U). Link: <a href="https://www.swimspa.org/stspa/UserFiles/Image/QuickUpload/futures-time-standards_014128.pdf" target="_blank" rel="noopener">Official standards PDF</a></li>
+      <li><b>Winter Juniors</b> — USA Swimming, <i>2026 Speedo Winter Junior Championships</i> time standards (East, Indianapolis, Dec 9-12, 2026). Link: <a href="https://www.usaswimming.org/times/time-standards" target="_blank" rel="noopener">USA Swimming official standards page (2026 standards documents)</a></li>
+      <li><b>Summer Juniors</b> — USA Swimming, <i>2026 Speedo Junior National Championships Time Standards</i>. Link: <a href="https://irp.cdn-website.com/4e47d36a/files/uploaded/2026+Speedo+Junior+National+Championships_Time+Standards.pdf" target="_blank" rel="noopener">Official standards PDF</a></li>
+      <li><b>U.S. Nationals</b> — USA Swimming, <i>2026 Toyota U.S. National Championships Time Standards</i> (Irvine, Jul 28–Aug 1, 2026). Published as two age tables — 18 &amp; Under and 19 &amp; Over; the app shows the table for the swimmer's age. The 2027 edition (Indianapolis, Jun 8–12, 2027) has been announced but its standards are not yet published, so the 2026 set is used. Link: <a href="https://websiteprodcoresa.blob.core.windows.net/sitefinity/docs/default-source/timesdocuments/time-standards/2026/18077640025_events_2026_toyotanationalchampionships_timestandards.pdf?sfvrsn=c071832_3" target="_blank" rel="noopener">Official standards PDF</a></li>
+      <li><b>U.S. Open</b> — USA Swimming, <i>2026 Toyota U.S. Open Time Standards</i> (Austin, Dec 2–5, 2026), primary standards table. Link: <a href="https://usaswimming.org/docs/default-source/timesdocuments/time-standards/2026/timestandards_2026_toyotausopen082826.pdf?sfvrsn=5381e32_7" target="_blank" rel="noopener">Official standards PDF</a></li>
+      <li><b>Olympic Trials</b> — USA Swimming, <i>2028 U.S. Olympic Team Trials – Swimming Qualifying Standards</i> (Indianapolis, Jun 9–17, 2028), announced Oct 15, 2026; LCM only, single tier. Links: <a href="http://www.usaswimming.org/docs/default-source/timesdocuments/time-standards/2028/2028_olympictrials_timestandards.pdf" target="_blank" rel="noopener">Official standards PDF</a> · <a href="https://www.usaswimming.org/news/2026/10/15/usa-swimming-announces-qualifying-standards-for-2028-us-olympic-team-trials-swimming" target="_blank" rel="noopener">USA Swimming announcement</a></li>
+    </ul>
+  </section>
+  </div><!-- /pageRefs -->
+</main>
+<footer>
+Data: USA Swimming Motivational 2024-2028 (Oct 2025 revision, age-group + single-age) · Maryland LSC Champs / Jr Champs 2026 · Eastern Zone Age Group / Sectionals 2026 · NCSA Age Group (unchanged for 2027) / NCSA Juniors · Futures · Winter / Summer Juniors 2026 · U.S. Nationals / U.S. Open 2026 (Open) · Olympic Trials 2028 (Open, LCM). <span id="recCount">…</span> qualifying standards in total.<br>
+MD Jr Champs is a band, not a single cut: your time must be slower than the MD Champs cut and at or under this upper bound (if you make the Champs cut, that is the one that counts). Standards that were never published are never shown. Qualifying periods and entry eligibility follow each meet announcement — this tool only shows where a time sits.
+</footer>
+<script>
+"use strict";
+let DATA=[];
+const EVENTS={
+ FR:{name:"Freestyle",dists:{SCY:[50,100,200,500,1000,1650],SCM:[50,100,200,400,800,1500],LCM:[50,100,200,400,800,1500]}},
+ BK:{name:"Backstroke",dists:{SCY:[50,100,200],SCM:[50,100,200],LCM:[50,100,200]}},
+ BR:{name:"Breaststroke",dists:{SCY:[50,100,200],SCM:[50,100,200],LCM:[50,100,200]}},
+ FL:{name:"Butterfly",dists:{SCY:[50,100,200],SCM:[50,100,200],LCM:[50,100,200]}},
+ IM:{name:"IM",dists:{SCY:[100,200,400],SCM:[100,200,400],LCM:[200,400]}}
+};
+const SRCNAMES={ez_sectionals:"EZ Sectionals",futures:"Futures",winter_juniors:"Winter Jr",summer_juniors:"Summer Jr",ncsa_juniors_spring:"NCSA Jr (Spring)",ncsa_summer:"NCSA Jr (Summer)",us_nationals:"U.S. Nationals",us_open:"U.S. Open",olympic_trials:"Olympic Trials"};
+const OPEN_SRC=new Set(["ez_sectionals","us_nationals","us_open","olympic_trials"]);
+function ageGroupOf(age){return age<=10?"10U":age<=12?"11-12":age<=14?"13-14":age<=16?"15-16":age<=18?"17-18":"19+"}
+function fmt(sec){if(sec==null||isNaN(sec))return"--.--";sec=Math.round(sec*100)/100;const m=Math.floor(sec/60),s=sec-m*60;return m>0?m+":"+(s<10?"0":"")+s.toFixed(2):s.toFixed(2)}
+function parseInput(str){
+  if(str==null)return null;
+  str=String(str).trim();if(!str)return null;
+  if(str.includes(":")){
+    const p=str.split(":");if(p.length!==2)return null;
+    if(p[1].length<2)return null;
+    const m=parseFloat(p[0]),s=parseFloat(p[1]);
+    if(isNaN(m)||isNaN(s))return null;
+    return m*60+s;
+  }
+  if(str.includes(".")){
+    if(str.endsWith("."))return null;
+    const v=parseFloat(str);
+    return isNaN(v)?null:v;
+  }
+  const d=str.replace(/\D/g,"");
+  if(d.length<4)return null;
+  if(d.length===4)return parseInt(d,10)/100;
+  const hun=parseInt(d.slice(-2),10),sec=parseInt(d.slice(-4,-2),10),min=parseInt(d.slice(0,-4),10);
+  if(sec>59)return parseInt(d,10)/100;
+  return min*60+sec+hun/100;
+}
+function digitsDisplay(d){const t=parseInput(d);return t==null?d:fmt(t)}
+function buildLadder(data,o){
+  const ag=ageGroupOf(o.age), mdAg=o.age<=14?ag:"Senior";
+  const ncsaAg=o.age<=11?"11U":o.age<=14?String(o.age):null;
+  const map=new Map();
+  const push=(t,label)=>{if(!map.has(t))map.set(t,[]);const a=map.get(t);if(!a.includes(label))a.push(label)};
+  for(const r of data){
+    if(r.gender!==o.gender||r.course!==o.course||r.event!==o.event)continue;
+    if(r.level==="Bonus")continue;
+    const s=r.source;
+    if(s==="motivational_agegroup"&&o.mode==="group"&&r.ageGroup===ag)push(r.timeSec,"Motivational "+r.level);
+    else if(s==="motivational_singleage"&&o.mode==="single"&&r.age===o.age)push(r.timeSec,"Motivational (Single Age) "+r.level);
+    else if(s==="md_champs"&&r.ageGroup===mdAg)push(r.timeSec,"MD Champs");
+    else if(s==="md_junior_champs"&&r.ageGroup===mdAg)push(r.timeSec,"MD Jr Champs (upper bound)");
+    else if((s==="ez_agegroup_sc"||s==="ez_agegroup_lc")&&r.ageGroup===ag)push(r.timeSec,"EZ Age Group Champs");
+    else if(s==="ncsa_agegroup"&&(r.ageGroup===ncsaAg||(o.age>=13&&o.age<=14&&r.ageGroup==="13-14")))push(r.timeSec,"NCSA Age Group"+(r.level==="Bonus"?" Bonus":""));
+    else if(s==="us_nationals"&&((o.age<=18&&r.ageGroup==="18U")||(o.age>18&&r.ageGroup==="Open")))push(r.timeSec,o.age<=18?"U.S. Nationals (18&U)":"U.S. Nationals");
+    else if(s!=="us_nationals"&&SRCNAMES[s]&&(OPEN_SRC.has(s)||o.age<=18))push(r.timeSec,SRCNAMES[s]+(r.level==="Bonus"?" Bonus":""));
+  }
+  return [...map.entries()].map(([t,labels])=>({timeSec:t,label:labels.join(" · ")})).sort((a,b)=>b.timeSec-a.timeSec);
+}
+function evaluate(data,o,timeSec){
+  const ladder=buildLadder(data,o);
+  const hit=ladder.filter(r=>timeSec<=r.timeSec);
+  const highest=hit.length?hit[hit.length-1]:null;
+  const missed=ladder.filter(r=>timeSec>r.timeSec);
+  const next=missed.length?missed[0]:null;
+  let progress=0;
+  if(highest&&next)progress=(highest.timeSec-timeSec)/(highest.timeSec-next.timeSec);
+  else if(highest&&!next)progress=1;
+  const score=(highest?ladder.indexOf(highest):-1)+ (highest?progress:0);
+  return{ladder,highest,next,gap:next?timeSec-next.timeSec:null,progress,score};
+}
+if(typeof module!=="undefined")module.exports={buildLadder,evaluate,fmt,ageGroupOf,parseInput,digitsDisplay};
+
+if(typeof document!=="undefined"){
+const $=id=>document.getElementById(id);
+const state={gender:"M",age:11,mode:"group",course:"SCY",stroke:"FR",dist:50,raw:"",sort:"rank"};
+let entries=[];try{entries=JSON.parse(localStorage.getItem("swimcuts.entries")||"[]")}catch(e){entries=[]}
+function curEvent(){return state.dist+state.stroke}
+function curTime(){return parseInput(state.raw)}
+function segWire(id,key,after){
+  const seg=$(id),thumb=seg.querySelector(".thumb"),btns=[...seg.querySelectorAll("button")];
+  const place=()=>{const on=seg.querySelector("button.on");thumb.style.width=on.offsetWidth+"px";thumb.style.transform="translateX("+(on.offsetLeft-3)+"px)"};
+  btns.forEach(b=>b.onclick=()=>{btns.forEach(x=>x.classList.remove("on"));b.classList.add("on");state[key]=b.dataset.v;place();after&&after()});
+  requestAnimationFrame(place);window.addEventListener("resize",place);
+}
+function renderStrokes(){
+  const w=$("strokeChips");w.innerHTML="";
+  Object.keys(EVENTS).forEach(k=>{const b=document.createElement("button");b.className="chip"+(state.stroke===k?" on":"");b.textContent=EVENTS[k].name;b.onclick=()=>{state.stroke=k;const ds=EVENTS[k].dists[state.course];if(!ds.includes(state.dist))state.dist=ds[0];renderStrokes();renderDists();update()};w.appendChild(b)});
+}
+function renderDists(){
+  const w=$("distChips");w.innerHTML="";
+  EVENTS[state.stroke].dists[state.course].forEach(d=>{const b=document.createElement("button");b.className="chip"+(state.dist===d?" on":"");b.textContent=d;b.onclick=()=>{state.dist=d;renderDists();update()};w.appendChild(b)});
+}
+function update(){
+  $("ageVal").textContent=state.age;
+  $("ageGrpLab").textContent=state.age>18?"Senior · Open events only":ageGroupOf(state.age)+" group · single age "+state.age;
+  const t=curTime(),disp=$("timeDisp");
+  disp.value=t==null?state.raw:fmt(t);disp.classList.toggle("empty",t==null);
+  const o={gender:state.gender,age:state.age,mode:state.mode,course:state.course,event:curEvent()};
+  const ev=evaluate(DATA,o,t==null?Infinity:t);
+  const badge=$("badge"),nextLine=$("nextLine");
+  if(t==null){badge.textContent="Enter a time";badge.className="badge none";nextLine.innerHTML="";$("bar").style.width="0%";$("barLeft").textContent="";$("barRight").textContent=""}
+  else{
+    const newTxt=ev.highest?ev.highest.label:"No cut yet";
+    if(badge.textContent!==newTxt){badge.textContent=newTxt;badge.classList.remove("pop");void badge.offsetWidth;badge.classList.add("pop")}
+    badge.className="badge"+(ev.highest?"":" none")+(badge.classList.contains("pop")?" pop":"");
+    if(ev.next)nextLine.innerHTML="Next cut: <b>"+ev.next.label+"</b> ("+fmt(ev.next.timeSec)+") — <span class='gapNum'>"+ev.gap.toFixed(2)+" sec</span> to go";
+    else nextLine.innerHTML="You reached the <b>top cut</b> of this ladder 🎉";
+    $("bar").style.width=Math.round((ev.progress||0)*100)+"%";
+    $("barLeft").textContent=ev.highest?ev.highest.label+" "+fmt(ev.highest.timeSec) :"Start";
+    $("barRight").textContent=ev.next?ev.next.label+" "+fmt(ev.next.timeSec) :"Top";
+  }
+  $("addBtn").disabled=t==null;
+  const lad=$("ladder");lad.innerHTML="";
+  const rows=[...ev.ladder].reverse();
+  let mePlaced=false;
+  const meRow=()=>{const d=document.createElement("div");d.className="meLine";d.innerHTML="<span>▶ Your time</span><span class='tm'>"+fmt(t)+"</span><span style='margin-left:auto'>"+(ev.highest?ev.highest.label:"No cut yet")+"</span>";return d};
+  rows.forEach(r=>{
+    if(t!=null&&!mePlaced&&r.timeSec<t){lad.appendChild(meRow());mePlaced=true}
+    const d=document.createElement("div");
+    const isNext=ev.next&&r.timeSec===ev.next.timeSec,isHit=t!=null&&t<=r.timeSec;
+    d.className="rung "+(isHit?"hit":isNext?"next":"miss");
+    d.innerHTML="<span class='nm'>"+r.label+"</span><span class='tm'>"+fmt(r.timeSec)+"</span><span class='st'>"+(t==null?"":isHit?"✓ Made it":isNext?"−"+(t-r.timeSec).toFixed(2):"−"+(t-r.timeSec).toFixed(2))+"</span>";
+    lad.appendChild(d);
+  });
+  if(t!=null&&!mePlaced)lad.appendChild(meRow());
+  if(!rows.length)lad.innerHTML="<div class='emptyNote'>No published standard for this event under these settings (skipped, never estimated)</div>";
+}
+function renderEntries(flip){
+  const w=$("entries");
+  const before={};if(flip)[...w.querySelectorAll("[data-eid]")].forEach(el=>before[el.dataset.eid]=el.getBoundingClientRect());
+  const sorted=[...entries].sort((a,b)=>state.sort==="rank"?b.score-a.score||a.gap-b.gap:(a.gap==null?9e9:a.gap)-(b.gap==null?9e9:b.gap));
+  w.innerHTML=sorted.length?"":"<div class='emptyNote'>No times yet — enter one above and add it</div>";
+  sorted.forEach(e=>{
+    const d=document.createElement("div");d.className="entry";d.dataset.eid=e.id;
+    d.innerHTML="<div><div class='ev'>"+e.evName+"</div><div class='tm'>"+fmt(e.timeSec)+" · "+e.course+" · "+(e.gender==="M"?"Boys":"Girls")+", age "+e.age+"</div></div><div class='lv'><b>"+(e.highest||"No cut yet")+"</b><span>"+(e.next?"Next: "+e.next+" · "+e.gap.toFixed(2)+"s to go":"Top cut reached")+"</span></div>";
+    const del=document.createElement("button");del.className="del";del.textContent="✕";del.onclick=()=>{entries=entries.filter(x=>x.id!==e.id);saveEntries();renderEntries(true)};
+    d.appendChild(del);w.appendChild(d);
+  });
+  if(flip)[...w.querySelectorAll("[data-eid]")].forEach(el=>{const b=before[el.dataset.eid];if(!b)return;const a=el.getBoundingClientRect(),dy=b.top-a.top;if(dy){el.style.transform="translateY("+dy+"px)";el.style.transition="none";requestAnimationFrame(()=>{el.style.transition="transform .35s cubic-bezier(.4,1,.4,1)";el.style.transform=""})}});
+}
+function saveEntries(){try{localStorage.setItem("swimcuts.entries",JSON.stringify(entries))}catch(e){}}
+function init(){
+  const showTab=refs=>{
+    $("pageMain").classList.toggle("on",!refs);
+    $("pageRefs").classList.toggle("on",refs);
+    $("tabBtnMain").classList.toggle("on",!refs);
+    $("tabBtnRefs").classList.toggle("on",refs);
+    window.scrollTo({top:0,behavior:"smooth"});
+  };
+  $("tabBtnMain").onclick=()=>showTab(false);
+  $("tabBtnRefs").onclick=()=>showTab(true);
+  segWire("segGender","gender",update);segWire("segMode","mode",update);
+  segWire("segCourse","course",()=>{const ds=EVENTS[state.stroke].dists[state.course];if(!ds.includes(state.dist))state.dist=ds[0];renderDists();update()});
+  $("ageMinus").onclick=()=>{if(state.age>8){state.age--;update()}};
+  $("agePlus").onclick=()=>{if(state.age<22){state.age++;update()}};
+  renderStrokes();renderDists();
+  const ti=$("timeDisp");
+  ti.addEventListener("input",()=>{const d=ti.value.replace(/\D/g,"").slice(-6);state.raw=d;ti.value=digitsDisplay(d);try{ti.setSelectionRange(ti.value.length,ti.value.length)}catch(e){} update()});
+  $("clearTime").onclick=e=>{e.stopPropagation();state.raw="";ti.value="";update();ti.focus()};
+  $("timeCard").addEventListener("click",e=>{if(e.target.id!=="clearTime"&&e.target.id!=="timeDisp")ti.focus()});
+  $("addBtn").onclick=()=>{
+    const t=curTime();if(t==null)return;
+    const o={gender:state.gender,age:state.age,mode:state.mode,course:state.course,event:curEvent()};
+    const ev=evaluate(DATA,o,t);
+    entries.push({id:Date.now()+"",evName:state.dist+" "+EVENTS[state.stroke].name.split(" ")[0],timeSec:t,course:state.course,gender:state.gender,age:state.age,highest:ev.highest?ev.highest.label:null,next:ev.next?ev.next.label:null,gap:ev.gap,score:ev.score});
+    saveEntries();renderEntries(true);
+  };
+  $("sortRank").onclick=()=>{state.sort="rank";$("sortRank").classList.add("on");$("sortClose").classList.remove("on");renderEntries(true)};
+  $("sortClose").onclick=()=>{state.sort="close";$("sortClose").classList.add("on");$("sortRank").classList.remove("on");renderEntries(true)};
+  $("clearList").onclick=()=>{entries=[];saveEntries();renderEntries(true)};
+  update();renderEntries(false);
+}
+if(window.__EMBEDDED_DATA__){DATA=window.__EMBEDDED_DATA__;$("recCount").textContent=DATA.length.toLocaleString();init()}
+else fetch("standards.json").then(r=>r.json()).then(d=>{DATA=d;$("recCount").textContent=d.length.toLocaleString();init()}).catch(()=>{$("recCount").textContent="load failed";init()});
+if("serviceWorker" in navigator&&location.protocol.startsWith("http"))navigator.serviceWorker.register("sw.js").catch(()=>{});
+}
+</script>
+</body>
+</html>
