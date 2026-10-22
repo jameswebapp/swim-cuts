@@ -66,7 +66,14 @@ published are never shown (no estimates, no conversions).
 > **Coverage note:** at the local (LSC) level this app currently covers
 > **Maryland, Potomac Valley (PVS), Virginia (VA) and Middle Atlantic (MA)** — more LSCs are being added one at a
 > time. The national and Eastern Zone sets above apply to
-> everyone. Want your LSC's championship cuts, or another meet's qualifying
+> everyone. Two neighbors need no data of their own: **Allegheny Mountain
+> (AM)** championships key off the USA Swimming Motivational standards
+> already in this app (Single Age "A" times — the 15 & Over events use the
+> 15-year-old "A"; "BB" for the 800/1500 Free at the LC age-group champs), so
+> AM swimmers can read their championship cut right off the Motivational
+> (Single Age) A rung. **West Virginia (WV)** state championships publish no
+> qualifying times at all (entry-based), so there is nothing to add for WV.
+> Want your LSC's championship cuts, or another meet's qualifying
 > times, added? Open an [issue](https://github.com/jameswebapp/swim-cuts/issues)
 > or email **James2017yyz@gmail.com** — happy to add more.
 
