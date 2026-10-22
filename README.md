@@ -5,7 +5,7 @@ Motivational levels, Maryland LSC championships, Eastern Zone meets, NCSA,
 Futures, Juniors, U.S. Nationals / U.S. Open, and the 2028 Olympic Trials
 standards, all merged and sorted by time.
 
-### ▶ Use it now: **https://jameswebapp.github.io/swim-cuts/**
+### ▶ Use it [now](https://jameswebapp.github.io/swim-cuts/)
 
 No account, no install, works offline after the first visit. Times you enter
 stay on your device (localStorage) — nothing is uploaded.
