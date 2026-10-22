@@ -42,7 +42,7 @@ stay on your device (localStorage) — nothing is uploaded.
 
 It then behaves like a native app — full screen and offline at the pool deck.
 
-## What's inside (11,668 standards)
+## What's inside (12,653 standards)
 
 | Set | Edition |
 |---|---|
@@ -51,6 +51,7 @@ It then behaves like a native app — full screen and offline at the pool deck.
 | Potomac Valley (PVS) LSC Championships — 14&U + Open (SC / LC) | 2026–2027 |
 | Virginia (VA) LSC Championships — Age Group + Senior (SCY/SCM/LCM) | 2025–2028 |
 | Middle Atlantic (MA) LSC Championships — 10&U / Junior / Senior / Silver (SCY/SCM/LCM) | 2027 |
+| Metropolitan (MR) LSC Championships — Silver / Junior Mets / AGTC / Senior Mets (SCY + Summer SCM/LCM) | 2023–2026 |
 | Eastern Zone Age Group Champs (SC & LC) 2026 / Sectionals 2027 | 2026–2027 |
 | NCSA Age Group / NCSA Juniors (Spring & Summer) | 2026 (Age Group unchanged for 2027) |
 | Futures · Summer Juniors 2027 · Winter Juniors 2026 | 2026–2027 |
@@ -64,7 +65,7 @@ inside the app for the full list with links. Standards that were never
 published are never shown (no estimates, no conversions).
 
 > **Coverage note:** at the local (LSC) level this app currently covers
-> **Maryland, Potomac Valley (PVS), Virginia (VA) and Middle Atlantic (MA)** — more LSCs are being added one at a
+> **Maryland, Potomac Valley (PVS), Virginia (VA), Middle Atlantic (MA) and Metropolitan (MR)** — more LSCs are being added one at a
 > time. The national and Eastern Zone sets above apply to
 > everyone. Two neighbors need no data of their own: **Allegheny Mountain
 > (AM)** championships key off the USA Swimming Motivational standards
@@ -82,6 +83,11 @@ Notes:
   MD Champs cut and at or under the Jr Champs bound shown in the ladder.
 - **MA Silver Champs** is a band the same way: make the Silver standard, but be
   no faster than the Junior/Senior cut — that cut is the one that counts.
+- **MR AGTC (15-18)** is also a band: make the AGTC Min, but be no faster than
+  the AGTC Max, which sits at the Senior Mets cut. MR Bronze Champs has no
+  floor at all — its ceiling is the Silver column itself — so it is not a
+  separate rung. MR's short-course age-group chart is the 2022–2023 printing,
+  still linked as the standing chart for the current season.
 - Each meet shows the edition closest to today going forward: if the next
   edition's standards aren't published yet, the most recent one is used.
 
@@ -110,6 +116,7 @@ Notes:
 - **PVS Open Champs** — Potomac Valley Swimming. SC Championships 2027: one Open table. LC Championships 2026: Junior and Senior divisions of one meet — the Junior division is a band (make the Junior cut, but be no faster than the Senior cut), so the ladder shows the Junior cut as an upper-bound rung next to the Senior cut. Links: [SC 2027 standards (PDF)](https://www.files.pvswim.org/2627meet/2027-SC-Open-Championships-Qualifying-Times.pdf) · [LC 2026 standards (PDF)](https://www.files.pvswim.org/2526meet/2026-LC-Open-Championships-Qualifying-Times.pdf) · [PVS qualifying-times index](https://www.pvswim.org/qualifying-times)
 - **VA Champs** — Virginia Swimming (pick VA under "Your LSC"). Quadrennial tables, 2025–2028, one set serving both the SC and LC championship meets, with SCY + SCM + LCM columns: Age Group Champs (10U / 11-12 / 13-14) and Senior Champs. The 12 District Championship meets publish no table of their own — they key off these same Age Group marks. Links: [Age Group Champs standards (PDF)](https://www.gomotionapp.com/acac/UserFiles/Image/QuickUpload/agc-with-50s_016128.pdf) · [Senior Champs standards (PDF)](https://www.gomotionapp.com/acac/UserFiles/Image/QuickUpload/download-5-_001490.pdf)
 - **MA Champs (10&U / Junior / Senior / Silver)** — Middle Atlantic Swimming, *2027 Championship Qualifying Standards* (pick MA under "Your LSC"). One table per meet with SCY + SCM + LCM columns. Silver Champs is a band: make the Silver standard, but be no faster than the Junior/Senior cut (that is the one that counts). Note: the Senior women's 50 Back SCM standard is printed as 27.39 — faster than its own SCY mark; shown exactly as published. Links: [MA time standards index](https://www.gomotionapp.com/team/ezmaslsc/page/18-19-meet-inforesults/time-standards) · [10&U standards (PDF)](https://www.gomotionapp.com/ezmaslsc/UserFiles/Image/QuickUpload/masi27-10u-standards-print_055416.pdf) · [Junior standards (PDF)](https://www.gomotionapp.com/ezmaslsc/UserFiles/Image/QuickUpload/masi27-jr-standards-print_055133.pdf) · [Senior standards (PDF)](https://www.gomotionapp.com/ezmaslsc/UserFiles/Image/QuickUpload/masi27-sr-standards-print-10-5-26_099273.pdf) · [Silver standards (PDF)](https://www.gomotionapp.com/ezmaslsc/UserFiles/Image/QuickUpload/masi27-slvr-standards-print_030654.pdf)
+- **MR Champs (Silver / Junior Mets / AGTC / Senior Mets)** — Metropolitan Swimming (pick MR under "Your LSC"). The short-course age-group standards live in one single-age chart (Silver, Junior Mets and the 15-18 AGTC columns side by side); that chart is the 2022–2023 printing — still the standing chart linked for the current season, with no newer edition issued. AGTC is a band (Min to make, Max at the Senior Mets cut). Bronze Champs has no floor — its ceiling is the Silver column itself — so it is not a separate rung. Senior Mets (2026) uses one table for the Winter and Summer meets; its 50 BK/BR/FL have no standard of their own (you qualify via the 100). Junior Mets Summer (2026) covers the long-course season, ages 9&U–15-18. Links: [SC age-group chart (PDF)](https://www.gomotionapp.com/mrlsc/UserFiles/Image/QuickUpload/mr-ag-agtc-time-standards-2022-2023_030960.pdf) · [Senior Mets Winter 2026 (PDF)](https://www.gomotionapp.com/mrlsc/UserFiles/Image/QuickUpload/2026-senior-metropolitan-winter-championships-time-standards-2_033929.pdf) · [Senior Mets Summer 2026 (PDF)](https://www.gomotionapp.com/mrlsc/UserFiles/Image/QuickUpload/2026-senior-metropolitan-summer-championships-time-standards-6_035436.pdf) · [Junior Mets Summer 2026 (PDF)](https://www.gomotionapp.com/mrfa/UserFiles/File/2026-lcm-jr-met-cuts-067994-037298_082651.pdf)
 
 ---
 
