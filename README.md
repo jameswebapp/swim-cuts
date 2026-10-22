@@ -42,7 +42,7 @@ stay on your device (localStorage) — nothing is uploaded.
 
 It then behaves like a native app — full screen and offline at the pool deck.
 
-## What's inside (11,068 standards)
+## What's inside (11,668 standards)
 
 | Set | Edition |
 |---|---|
@@ -50,6 +50,7 @@ It then behaves like a native app — full screen and offline at the pool deck.
 | Maryland LSC Champs / Jr Champs (SCY & LCM) | 2026 |
 | Potomac Valley (PVS) LSC Championships — 14&U + Open (SC / LC) | 2026–2027 |
 | Virginia (VA) LSC Championships — Age Group + Senior (SCY/SCM/LCM) | 2025–2028 |
+| Middle Atlantic (MA) LSC Championships — 10&U / Junior / Senior / Silver (SCY/SCM/LCM) | 2027 |
 | Eastern Zone Age Group Champs (SC & LC) 2026 / Sectionals 2027 | 2026–2027 |
 | NCSA Age Group / NCSA Juniors (Spring & Summer) | 2026 (Age Group unchanged for 2027) |
 | Futures · Summer Juniors 2027 · Winter Juniors 2026 | 2026–2027 |
@@ -63,7 +64,7 @@ inside the app for the full list with links. Standards that were never
 published are never shown (no estimates, no conversions).
 
 > **Coverage note:** at the local (LSC) level this app currently covers
-> **Maryland, Potomac Valley (PVS) and Virginia (VA)** — more LSCs are being added one at a
+> **Maryland, Potomac Valley (PVS), Virginia (VA) and Middle Atlantic (MA)** — more LSCs are being added one at a
 > time. The national and Eastern Zone sets above apply to
 > everyone. Want your LSC's championship cuts, or another meet's qualifying
 > times, added? Open an [issue](https://github.com/jameswebapp/swim-cuts/issues)
@@ -72,6 +73,8 @@ published are never shown (no estimates, no conversions).
 Notes:
 - **MD Jr Champs** is a *band*, not a floor: your time must be slower than the
   MD Champs cut and at or under the Jr Champs bound shown in the ladder.
+- **MA Silver Champs** is a band the same way: make the Silver standard, but be
+  no faster than the Junior/Senior cut — that cut is the one that counts.
 - Each meet shows the edition closest to today going forward: if the next
   edition's standards aren't published yet, the most recent one is used.
 
@@ -99,6 +102,7 @@ Notes:
 - **PVS 14&U Champs** — Potomac Valley Swimming (pick PVS under "Your LSC"). Two meets, one table each with SCY + LCM qualifying times: SC Championships 2027 (College Park, Mar 11–14, 2027) and LC Championships 2026 (Jul 16–20, 2026; the 2027 LC standards were not yet published). The LC table's 13-14 50 BK/BR/FL are not separate cuts — you qualify via the 100, as published. Links: [SC 2027 standards (PDF)](https://www.files.pvswim.org/2627meet/2027-SC-14U-Championships-Qualifying-Times.pdf) · [LC 2026 standards (PDF)](https://www.files.pvswim.org/2526meet/2026-LC-AG-Championships-Qualifying-Times.pdf)
 - **PVS Open Champs** — Potomac Valley Swimming. SC Championships 2027: one Open table. LC Championships 2026: Junior and Senior divisions of one meet — the Junior division is a band (make the Junior cut, but be no faster than the Senior cut), so the ladder shows the Junior cut as an upper-bound rung next to the Senior cut. Links: [SC 2027 standards (PDF)](https://www.files.pvswim.org/2627meet/2027-SC-Open-Championships-Qualifying-Times.pdf) · [LC 2026 standards (PDF)](https://www.files.pvswim.org/2526meet/2026-LC-Open-Championships-Qualifying-Times.pdf) · [PVS qualifying-times index](https://www.pvswim.org/qualifying-times)
 - **VA Champs** — Virginia Swimming (pick VA under "Your LSC"). Quadrennial tables, 2025–2028, one set serving both the SC and LC championship meets, with SCY + SCM + LCM columns: Age Group Champs (10U / 11-12 / 13-14) and Senior Champs. The 12 District Championship meets publish no table of their own — they key off these same Age Group marks. Links: [Age Group Champs standards (PDF)](https://www.gomotionapp.com/acac/UserFiles/Image/QuickUpload/agc-with-50s_016128.pdf) · [Senior Champs standards (PDF)](https://www.gomotionapp.com/acac/UserFiles/Image/QuickUpload/download-5-_001490.pdf)
+- **MA Champs (10&U / Junior / Senior / Silver)** — Middle Atlantic Swimming, *2027 Championship Qualifying Standards* (pick MA under "Your LSC"). One table per meet with SCY + SCM + LCM columns. Silver Champs is a band: make the Silver standard, but be no faster than the Junior/Senior cut (that is the one that counts). Note: the Senior women's 50 Back SCM standard is printed as 27.39 — faster than its own SCY mark; shown exactly as published. Links: [MA time standards index](https://www.gomotionapp.com/team/ezmaslsc/page/18-19-meet-inforesults/time-standards) · [10&U standards (PDF)](https://www.gomotionapp.com/ezmaslsc/UserFiles/Image/QuickUpload/masi27-10u-standards-print_055416.pdf) · [Junior standards (PDF)](https://www.gomotionapp.com/ezmaslsc/UserFiles/Image/QuickUpload/masi27-jr-standards-print_055133.pdf) · [Senior standards (PDF)](https://www.gomotionapp.com/ezmaslsc/UserFiles/Image/QuickUpload/masi27-sr-standards-print-10-5-26_099273.pdf) · [Silver standards (PDF)](https://www.gomotionapp.com/ezmaslsc/UserFiles/Image/QuickUpload/masi27-slvr-standards-print_030654.pdf)
 
 ---
 
