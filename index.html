@@ -117,6 +117,8 @@ footer{max-width:560px;margin:0 auto;padding:0 16px 30px;font-size:11px;color:va
     <div class="seg" id="segMode"><span class="thumb"></span><button data-v="group" class="on">Age Group</button><button data-v="single">Single Age</button></div>
     <div class="rowlab">Course</div>
     <div class="seg" id="segCourse"><span class="thumb"></span><button data-v="SCY" class="on">SCY (yards)</button><button data-v="SCM">SCM (meters)</button><button data-v="LCM">LCM (meters)</button></div>
+    <div class="rowlab">Your LSC (local championships)</div>
+    <div class="seg" id="segLsc"><span class="thumb"></span><button data-v="MD" class="on">Maryland (MD)</button><button data-v="PVS">Potomac Valley (PVS)</button></div>
     <div class="rowlab">Stroke</div>
     <div class="chips" id="strokeChips"></div>
     <div class="rowlab">Distance</div>
@@ -155,6 +157,8 @@ footer{max-width:560px;margin:0 auto;padding:0 16px 30px;font-size:11px;color:va
     <ul class="refs">
       <li><b>Motivational (Age Group + Single Age)</b> — USA Swimming, <i>2024-2028 National Age Group / Single Age Motivational Time Standards</i>, official PDF revised 2025-10-10. Links: <a href="https://www.usaswimming.org/times/time-standards" target="_blank" rel="noopener">USA Swimming official standards page</a> · <a href="https://www.gomotionapp.com/catcc/UserFiles/Image/QuickUpload/2028-usa-motivational-scy_080685.pdf" target="_blank" rel="noopener">SCY standards PDF</a> · <a href="https://swimstandards.com/national/quad" target="_blank" rel="noopener">SwimStandards cross-check</a></li>
       <li><b>MD Champs / MD Jr Champs</b> — Maryland Swimming, <i>2026 Maryland LSC Championships Qualifying Times</i> and the 2026 Junior Championships meet announcements (Site 1 / Site 2, Mar 2026). Links: <a href="http://www.opsthammerheads.org/recdsaopst/UserFiles/Image/QuickUpload/2025---2026-mdlsc-scy-championship-meet-qualifyingtimes-sr-champs-14-u-champs-1--007673_052207.pdf" target="_blank" rel="noopener">SCY Champs standards</a> · <a href="https://www.gomotionapp.com/md/UserFiles/Image/QuickUpload/2026-long-course-cut-times-1-_091328.pdf" target="_blank" rel="noopener">LCM standards</a> · <a href="https://www.gomotionapp.com/md/UserFiles/Image/QuickUpload/lcq-2026---final_023418.pdf" target="_blank" rel="noopener">Jr Champs / LCQ document</a></li>
+      <li><b>PVS 14&amp;U Champs</b> — Potomac Valley Swimming (pick PVS under "Your LSC"). Two meets, one table each with SCY + LCM qualifying times: SC Championships 2027 (College Park, Mar 11–14, 2027) and LC Championships 2026 (Jul 16–20, 2026; the 2027 LC standards were not yet published). The LC table's 13-14 50 BK/BR/FL are not separate cuts — you qualify via the 100, as published. Links: <a href="https://www.files.pvswim.org/2627meet/2027-SC-14U-Championships-Qualifying-Times.pdf" target="_blank" rel="noopener">SC 2027 standards (PDF)</a> · <a href="https://www.files.pvswim.org/2526meet/2026-LC-AG-Championships-Qualifying-Times.pdf" target="_blank" rel="noopener">LC 2026 standards (PDF)</a></li>
+      <li><b>PVS Open Champs</b> — Potomac Valley Swimming. SC Championships 2027: one Open table. LC Championships 2026: Junior and Senior divisions of one meet — the Junior division is a band (make the Junior cut, but be no faster than the Senior cut), so the ladder shows the Junior cut as an upper-bound rung next to the Senior cut. Links: <a href="https://www.files.pvswim.org/2627meet/2027-SC-Open-Championships-Qualifying-Times.pdf" target="_blank" rel="noopener">SC 2027 standards (PDF)</a> · <a href="https://www.files.pvswim.org/2526meet/2026-LC-Open-Championships-Qualifying-Times.pdf" target="_blank" rel="noopener">LC 2026 standards (PDF)</a> · <a href="https://www.pvswim.org/qualifying-times" target="_blank" rel="noopener">PVS qualifying-times index</a></li>
       <li><b>EZ Age Group Champs (SC / LC)</b> — Eastern Zone Swimming, <i>2026 Eastern Zone Age Group Championships Qualifying Times</i>, official QT tables. Links: <a href="https://www.ctswim.org/Customer-Content/www/Meets/SC2025-26/March/2026-eastern-zone-age-group-championships-meet-announcement_060363.pdf" target="_blank" rel="noopener">Short-course meet announcement</a> · <a href="https://www.ctswim.org/Customer-Content/www/CMS/files/meets/2026_LC_Meets/2026_EZ_LC_Age_Group_Champs_FINAL_updated.pdf" target="_blank" rel="noopener">Long-course meet announcement</a></li>
       <li><b>EZ Sectionals</b> — Eastern Zone Swimming, <i>2027 Eastern Zone Speedo Sectional Qualifying Times</i> — one table shared by the three Mar 18–21, 2027 meets (Buffalo LC / Providence SC North / Christiansburg SC South); the 50 BK/BR/FL now have their own standards. Link: <a href="https://www.easternzoneswimming.org/easternzone/UserFiles/Image/QuickUpload/2027-sectional-qualifying-times_025134.pdf" target="_blank" rel="noopener">Official standards PDF</a></li>
       <li><b>NCSA Age Group</b> — <i>2026 NCSA Age Group Swimming Championships</i> meet announcement (Orlando, Mar 25-28, 2026); NCSA has announced the standards are unchanged for 2027. Links: <a href="https://www.hinsdaleswimming.org/ishsc/UserFiles/Image/QuickUpload/2025-26-ncsa-spring-age-group-championships-time-standards_021639.pdf" target="_blank" rel="noopener">Standards PDF</a> · <a href="https://swimstandards.com/ncsa/age-group-times" target="_blank" rel="noopener">SwimStandards cross-check</a></li>
@@ -172,8 +176,8 @@ footer{max-width:560px;margin:0 auto;padding:0 16px 30px;font-size:11px;color:va
   </div><!-- /pageRefs -->
 </main>
 <footer>
-Data: USA Swimming Motivational 2024-2028 (Oct 2025 revision, age-group + single-age) · Maryland LSC Champs / Jr Champs 2026 · Eastern Zone Age Group 2026 / Sectionals 2027 · NCSA Age Group (unchanged for 2027) / NCSA Juniors · Futures · Summer Juniors 2027 · Winter Juniors 2026 · TYR Pro Swim Series 2027 · U.S. Nationals / U.S. Open 2026 (Open) · Olympic Trials 2028 (Open, LCM) · Open Water Nationals 2027. <span id="recCount">…</span> qualifying standards in total.<br>
-MD Jr Champs is a band, not a single cut: your time must be slower than the MD Champs cut and at or under this upper bound (if you make the Champs cut, that is the one that counts). Standards that were never published are never shown. Qualifying periods and entry eligibility follow each meet announcement — this tool only shows where a time sits.
+Data: USA Swimming Motivational 2024-2028 (Oct 2025 revision, age-group + single-age) · Maryland LSC Champs / Jr Champs 2026 · Potomac Valley (PVS) LSC Champs 2026–2027 · Eastern Zone Age Group 2026 / Sectionals 2027 · NCSA Age Group (unchanged for 2027) / NCSA Juniors · Futures · Summer Juniors 2027 · Winter Juniors 2026 · TYR Pro Swim Series 2027 · U.S. Nationals / U.S. Open 2026 (Open) · Olympic Trials 2028 (Open, LCM) · Open Water Nationals 2027. <span id="recCount">…</span> qualifying standards in total.<br>
+MD Jr Champs is a band, not a single cut: your time must be slower than the MD Champs cut and at or under this upper bound (if you make the Champs cut, that is the one that counts). PVS LC Junior Champs is also a band: the Junior cut is the floor and the Senior cut is the "no faster than" ceiling. Standards that were never published are never shown. Qualifying periods and entry eligibility follow each meet announcement — this tool only shows where a time sits.
 </footer>
 <script>
 "use strict";
@@ -223,8 +227,8 @@ function buildLadder(data,o){
     const s=r.source;
     if(s==="motivational_agegroup"&&o.mode==="group"&&r.ageGroup===ag)push(r.timeSec,"Motivational "+r.level);
     else if(s==="motivational_singleage"&&o.mode==="single"&&r.age===o.age)push(r.timeSec,"Motivational (Single Age) "+r.level);
-    else if(s==="md_champs"&&r.ageGroup===mdAg)push(r.timeSec,"MD Champs");
-    else if(s==="md_junior_champs"&&r.ageGroup===mdAg)push(r.timeSec,"MD Jr Champs (upper bound)");
+    else if(s==="md_champs"&&(o.lsc||"MD")==="MD"&&r.ageGroup===mdAg)push(r.timeSec,"MD Champs");
+    else if(s==="md_junior_champs"&&(o.lsc||"MD")==="MD"&&r.ageGroup===mdAg)push(r.timeSec,"MD Jr Champs (upper bound)");
     else if((s==="ez_agegroup_sc"||s==="ez_agegroup_lc")&&r.ageGroup===ag)push(r.timeSec,"EZ Age Group Champs");
     else if(s==="ncsa_agegroup"&&(r.ageGroup===ncsaAg||(o.age>=13&&o.age<=14&&r.ageGroup==="13-14")))push(r.timeSec,"NCSA Age Group"+(r.level==="Bonus"?" Bonus":""));
     else if(s==="us_nationals"&&((o.age<=18&&r.ageGroup==="18U")||(o.age>18&&r.ageGroup==="Open")))push(r.timeSec,o.age<=18?"U.S. Nationals (18&U)":"U.S. Nationals");
@@ -232,6 +236,10 @@ function buildLadder(data,o){
     else if((s==="tyr_pro_series"||s==="tyr_pro_series_ftl")&&((o.age<=18&&r.ageGroup==="18U")||(o.age>18&&r.ageGroup==="Open")))push(r.timeSec,(s==="tyr_pro_series"?"TYR Pro Series · Westmont & Nashville":"TYR Pro Series · Ft. Lauderdale")+(o.age<=18?" (18&U)":""));
     else if(s==="open_water_nationals"&&(r.owRace==="10K"||r.owRace==="3K Knockout & 5K"||(r.owRace==="10K 19&U"&&o.age<=19)))push(r.timeSec,"Open Water Nationals · "+(r.owRace==="3K Knockout & 5K"?"3K/5K":r.owRace==="10K 19&U"?"10K (19&U)":"10K"));
     else if(s==="open_water_junior_nationals"&&o.age<=16)push(r.timeSec,"Open Water Jr Nationals · 3K/5K");
+    else if(o.lsc==="PVS"&&(s==="pvs_ag_champs_sc"||s==="pvs_ag_champs_lc")&&o.age<=14&&r.ageGroup===ag)push(r.timeSec,s==="pvs_ag_champs_sc"?"PVS 14&U Champs · SC":"PVS 14&U Champs · LC");
+    else if(o.lsc==="PVS"&&s==="pvs_open_champs")push(r.timeSec,"PVS Open Champs · SC");
+    else if(o.lsc==="PVS"&&s==="pvs_senior_champs")push(r.timeSec,"PVS Senior Champs · LC");
+    else if(o.lsc==="PVS"&&s==="pvs_junior_champs")push(r.timeSec,"PVS Jr Champs · LC (upper bound)");
   }
   return [...map.entries()].map(([t,labels])=>({timeSec:t,label:labels.join(" · ")})).sort((a,b)=>b.timeSec-a.timeSec);
 }
@@ -251,7 +259,7 @@ if(typeof module!=="undefined")module.exports={buildLadder,evaluate,fmt,ageGroup
 
 if(typeof document!=="undefined"){
 const $=id=>document.getElementById(id);
-const state={gender:"M",age:11,mode:"group",course:"SCY",stroke:"FR",dist:50,raw:"",sort:"rank"};
+const state={gender:"M",age:11,mode:"group",course:"SCY",lsc:"MD",stroke:"FR",dist:50,raw:"",sort:"rank"};
 let entries=[];try{entries=JSON.parse(localStorage.getItem("swimcuts.entries")||"[]")}catch(e){entries=[]}
 function curEvent(){return state.dist+state.stroke}
 function curTime(){return parseInput(state.raw)}
@@ -274,7 +282,7 @@ function update(){
   $("ageGrpLab").textContent=state.age>18?"Senior · Open events only":ageGroupOf(state.age)+" group · single age "+state.age;
   const t=curTime(),disp=$("timeDisp");
   disp.value=t==null?state.raw:fmt(t);disp.classList.toggle("empty",t==null);
-  const o={gender:state.gender,age:state.age,mode:state.mode,course:state.course,event:curEvent()};
+  const o={gender:state.gender,age:state.age,mode:state.mode,course:state.course,lsc:state.lsc,event:curEvent()};
   const ev=evaluate(DATA,o,t==null?Infinity:t);
   const badge=$("badge"),nextLine=$("nextLine");
   if(t==null){badge.textContent="Enter a time";badge.className="badge none";nextLine.innerHTML="";$("bar").style.width="0%";$("barLeft").textContent="";$("barRight").textContent=""}
@@ -330,6 +338,7 @@ function init(){
   $("tabBtnRefs").onclick=()=>showTab(true);
   segWire("segGender","gender",update);segWire("segMode","mode",update);
   segWire("segCourse","course",()=>{const ds=EVENTS[state.stroke].dists[state.course];if(!ds.includes(state.dist))state.dist=ds[0];renderDists();update()});
+  segWire("segLsc","lsc",()=>update());
   $("ageMinus").onclick=()=>{if(state.age>8){state.age--;update()}};
   $("agePlus").onclick=()=>{if(state.age<22){state.age++;update()}};
   renderStrokes();renderDists();
@@ -339,7 +348,7 @@ function init(){
   $("timeCard").addEventListener("click",e=>{if(e.target.id!=="clearTime"&&e.target.id!=="timeDisp")ti.focus()});
   $("addBtn").onclick=()=>{
     const t=curTime();if(t==null)return;
-    const o={gender:state.gender,age:state.age,mode:state.mode,course:state.course,event:curEvent()};
+    const o={gender:state.gender,age:state.age,mode:state.mode,course:state.course,lsc:state.lsc,event:curEvent()};
     const ev=evaluate(DATA,o,t);
     entries.push({id:Date.now()+"",evName:state.dist+" "+EVENTS[state.stroke].name.split(" ")[0],timeSec:t,course:state.course,gender:state.gender,age:state.age,highest:ev.highest?ev.highest.label:null,next:ev.next?ev.next.label:null,gap:ev.gap,score:ev.score});
     saveEntries();renderEntries(true);
