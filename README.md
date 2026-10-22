@@ -9,8 +9,7 @@ standards, all merged and sorted by time.
 
 ⭐ **If this saved you some PDF-hunting, please star the repo** — it helps other
 swim families find it. Feedback and corrections are very welcome: open an
-[issue](https://github.com/jameswebapp/swim-cuts/issues), join the
-[discussions](https://github.com/jameswebapp/swim-cuts/discussions), or email
+[issue](https://github.com/jameswebapp/swim-cuts/issues) or email
 **James2017yyz@gmail.com**.
 
 No account, no install, works offline after the first visit. Times you enter
@@ -37,7 +36,7 @@ stay on your device (localStorage) — nothing is uploaded.
    the next cut and exactly how many seconds away it is.
 4. Add times to the session list and sort by level, or by "closest to next cut".
 
-**On your phone:** open the link, then
+**On your phone:** open [the app](https://jameswebapp.github.io/swim-cuts/), then
 - iPhone (Safari): Share → *Add to Home Screen*
 - Android (Chrome): ⋮ menu → *Install app* / *Add to Home screen*
 
