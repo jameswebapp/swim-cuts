@@ -61,6 +61,12 @@ Every set is sourced from its official document — see the **References** tab
 inside the app for the full list with links. Standards that were never
 published are never shown (no estimates, no conversions).
 
+> **Coverage note:** at the local (LSC) level this app currently covers
+> **Maryland LSC only** — the national and Eastern Zone sets above apply to
+> everyone. Want your LSC's championship cuts, or another meet's qualifying
+> times, added? Open an [issue](https://github.com/jameswebapp/swim-cuts/issues)
+> or email **James2017yyz@gmail.com** — happy to add more.
+
 Notes:
 - **MD Jr Champs** is a *band*, not a floor: your time must be slower than the
   MD Champs cut and at or under the Jr Champs bound shown in the ladder.
