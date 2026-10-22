@@ -229,7 +229,7 @@ function buildLadder(data,o){
     else if(s==="ncsa_agegroup"&&(r.ageGroup===ncsaAg||(o.age>=13&&o.age<=14&&r.ageGroup==="13-14")))push(r.timeSec,"NCSA Age Group"+(r.level==="Bonus"?" Bonus":""));
     else if(s==="us_nationals"&&((o.age<=18&&r.ageGroup==="18U")||(o.age>18&&r.ageGroup==="Open")))push(r.timeSec,o.age<=18?"U.S. Nationals (18&U)":"U.S. Nationals");
     else if(s!=="us_nationals"&&SRCNAMES[s]&&(OPEN_SRC.has(s)||o.age<=18))push(r.timeSec,SRCNAMES[s]+(r.level==="Bonus"?" Bonus":""));
-    else if((s==="tyr_pro_series"||s==="tyr_pro_series_ftl")&&((o.age<=18&&r.ageGroup==="18U")||(o.age>18&&r.ageGroup==="Open")))push(r.timeSec,(s==="tyr_pro_series"?"TYR Pro Series":"TYR Pro Series · Ft. Lauderdale")+(o.age<=18?" (18&U)":""));
+    else if((s==="tyr_pro_series"||s==="tyr_pro_series_ftl")&&((o.age<=18&&r.ageGroup==="18U")||(o.age>18&&r.ageGroup==="Open")))push(r.timeSec,(s==="tyr_pro_series"?"TYR Pro Series · Westmont & Nashville":"TYR Pro Series · Ft. Lauderdale")+(o.age<=18?" (18&U)":""));
     else if(s==="open_water_nationals"&&(r.owRace==="10K"||r.owRace==="3K Knockout & 5K"||(r.owRace==="10K 19&U"&&o.age<=19)))push(r.timeSec,"Open Water Nationals · "+(r.owRace==="3K Knockout & 5K"?"3K/5K":r.owRace==="10K 19&U"?"10K (19&U)":"10K"));
     else if(s==="open_water_junior_nationals"&&o.age<=16)push(r.timeSec,"Open Water Jr Nationals · 3K/5K");
   }
