@@ -5,7 +5,7 @@ Motivational levels, Maryland LSC championships, Eastern Zone meets, NCSA,
 Futures, Juniors, U.S. Nationals / U.S. Open, and the 2028 Olympic Trials
 standards, all merged and sorted by time.
 
-### ▶ Use it [now](https://jameswebapp.github.io/swim-cuts/)
+### ▶ Use it <a href="https://jameswebapp.github.io/swim-cuts/" target="_blank" rel="noopener">now</a>
 
 ⭐ **If this saved you some PDF-hunting, please star the repo** — it helps other
 swim families find it. Feedback and corrections are very welcome: open an
@@ -36,7 +36,7 @@ stay on your device (localStorage) — nothing is uploaded.
    the next cut and exactly how many seconds away it is.
 4. Add times to the session list and sort by level, or by "closest to next cut".
 
-**On your phone:** open [the app](https://jameswebapp.github.io/swim-cuts/), then
+**On your phone:** open <a href="https://jameswebapp.github.io/swim-cuts/" target="_blank" rel="noopener">the app</a>, then
 - iPhone (Safari): Share → *Add to Home Screen*
 - Android (Chrome): ⋮ menu → *Install app* / *Add to Home screen*
 
