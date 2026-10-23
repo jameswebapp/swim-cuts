@@ -34,6 +34,10 @@ stay on your device (localStorage) — nothing is uploaded.
    `12667` becomes `1:26.67`.
 3. The ladder shows every standard for that event: the highest cut you made,
    the next cut and exactly how many seconds away it is.
+   Too many rungs? Use the **Championships on the ladder** chips to pick which
+   championship families appear — Motivational, your LSC, Zone / Sectionals,
+   NCSA, ISCA, Futures / Juniors, and Nationals / Pro / Trials — or tap **All**.
+   Your picks are remembered on the device.
 4. Add times to the session list and sort by level, or by "closest to next cut".
 
 **On your phone:** open <a href="https://jameswebapp.github.io/swim-cuts/" target="_blank" rel="noopener">the app</a>, then
