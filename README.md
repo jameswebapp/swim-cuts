@@ -42,7 +42,7 @@ stay on your device (localStorage) — nothing is uploaded.
 
 It then behaves like a native app — full screen and offline at the pool deck.
 
-## What's inside (13,827 standards)
+## What's inside (14,881 standards)
 
 | Set | Edition |
 |---|---|
@@ -58,6 +58,8 @@ It then behaves like a native app — full screen and offline at the pool deck.
 | NCSA Age Group / NCSA Juniors (Spring & Summer) | 2026 (Age Group unchanged for 2027) |
 | Futures · Summer Juniors 2027 · Winter Juniors 2026 | 2026–2027 |
 | U.S. Nationals (18&U and 19&Over tables) / U.S. Open | 2026 |
+| ISCA Senior Cup / East Coast Elite Showcase | 2027 |
+| ISCA Summer Elite Showcase / Summer Senior Blast | 2026 |
 | TYR Pro Swim Series — Nashville & Westmont / Fort Lauderdale (each 19&Over + 18&U) | 2027 |
 | Open Water Nationals & Jr Nationals (pool-time standards) | 2027 |
 | U.S. Olympic Team Trials (LCM only, as published) | 2028 |
@@ -115,6 +117,7 @@ Notes:
 - **U.S. Open** — USA Swimming, *2026 Toyota U.S. Open Time Standards* (Austin, Dec 2–5, 2026), primary standards table. Link: [Official standards PDF](https://usaswimming.org/docs/default-source/timesdocuments/time-standards/2026/timestandards_2026_toyotausopen082826.pdf?sfvrsn=5381e32_7)
 - **Olympic Trials** — USA Swimming, *2028 U.S. Olympic Team Trials – Swimming Qualifying Standards* (Indianapolis, Jun 9–17, 2028), announced Oct 15, 2026; LCM only, single tier. Links: [Official standards PDF](http://www.usaswimming.org/docs/default-source/timesdocuments/time-standards/2028/2028_olympictrials_timestandards.pdf) · [USA Swimming announcement](https://www.usaswimming.org/news/2026/10/15/usa-swimming-announces-qualifying-standards-for-2028-us-olympic-team-trials-swimming)
 - **TYR Pro Swim Series** — USA Swimming, *2027 TYR Pro Swim Series Time Standards*. New for 2027: the series publishes **two** tables — Nashville (Jan 14–17) & Westmont (Mar 3–6) share one, Fort Lauderdale (Apr 21–24) has its own, slightly faster table; each comes in 19 & Over and 18 & Under age tables, and the app shows the one for the swimmer's age. No usaswimming.org-hosted copy of the 2027 posters could be located; these are the official posters as distributed to clubs. Links: [Nashville & Westmont poster (PDF)](https://www.gomotionapp.com/ncmac/UserFiles/Image/QuickUpload/2027-tyr-pro-swim-series-time-standards-nashville-and-westmont-2_086578.pdf) · [Fort Lauderdale poster (PDF)](https://www.gomotionapp.com/ncmac/UserFiles/Image/QuickUpload/2027-tyr-pro-swim-series-time-standards-fort-lauderdale-2_062857.pdf)
+- **ISCA Championships** — International Swim Coaches Association (St. Petersburg, FL). Four meets: **International Senior Cup** (2027; one Senior table, SCY/LCM — entry requires age 12+ on day 1, so it appears from age 12) and **East Coast Elite Showcase** (2027; single-age tables 9–14, SCY/SCM/LCM — the age-9 table is the meet's 9 & Under group; its 100 IM has no LCM standard), plus the summer pair in their 2026 editions (the 2027 summer standards are not yet published): **Summer Elite Showcase** (single-age 9–14, SCY/LCM) and **Summer Senior Blast** (one Senior table, all three courses). ISCA's bonus swims are an entry mechanism (qualify in one event, enter bonus events) — no bonus time standards are published, so nothing is excluded here. Links: [Senior Cup 2027 meet info (PDF)](https://swimisca.org/wp-content/uploads/2026/08/WORD-ONLY_2027-Senior-Cup-Meet-Info-8.28.26.pdf) · [East Elite Showcase 2027 (PDF)](https://swimisca.org/wp-content/uploads/2026/09/2027-East-Coast-Elite-Showcase-Meet-Info-9.3.26.pdf) · [Summer Elite Showcase 2026 (PDF)](https://swimisca.org/wp-content/uploads/2026/04/Summer-Elite-Showcase-2026-Meet-Info-1-22-26.pdf) · [Summer Senior Blast 2026 (PDF)](https://swimisca.org/wp-content/uploads/2026/04/Summer-Senior-Blast-2026-Info-4-16-26-min.pdf)
 - **Open Water Nationals / Jr Nationals** — USA Swimming, *2027 Open Water National & Junior National Championships* (Sarasota, FL, Apr 2–4, 2027). The ladder shows the **pool-time** standards, which key on distance freestyle only (800/1500 LCM, 1000/1650 SCY) and qualify you for the 10K or the 3K Knockout & 5K as labeled; the 5K and 3K Knockout can also be reached by placement at Zone Open Water Championships (see the Additional Criteria). There is no 7.5K in 2027. Links: [Official standards PDF](https://www.usaswimming.org/docs/default-source/timesdocuments/time-standards/2027/2027_events_openwater_timestandards.pdf) · [2027 Additional Criteria (PDF)](https://www.gomotionapp.com/czwilsc/UserFiles/Image/QuickUpload/2027-additional-criteria-for-qualification-of-national-level-events_062023.pdf)
 
 ### Local LSC
