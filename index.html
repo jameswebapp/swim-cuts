@@ -371,7 +371,7 @@ function renderEntries(flip){
 function saveEntries(){try{localStorage.setItem("swimcuts.entries",JSON.stringify(entries))}catch(e){}}
 const FAMS=[["motiv","Motivational"],["lsc","LSC Champs"],["zone","Zone / Sectionals"],["ncsa","NCSA"],["isca","ISCA"],["natj","Futures / Juniors"],["senior","Nationals / Pro / Trials"]];
 try{const sf=JSON.parse(localStorage.getItem("swimcuts.fams")||"null");if(Array.isArray(sf))state.fams=FAMS.map(f=>f[0]).filter(k=>sf.includes(k))}catch(e){}
-if(!Array.isArray(state.fams))state.fams=FAMS.map(f=>f[0]);
+if(!Array.isArray(state.fams))state.fams=["motiv","lsc","zone"];
 function saveFams(){try{localStorage.setItem("swimcuts.fams",JSON.stringify(state.fams))}catch(e){}}
 function renderFams(){
   const w=$("famChips");if(!w)return;w.innerHTML="";

@@ -37,7 +37,8 @@ stay on your device (localStorage) — nothing is uploaded.
    Too many rungs? Use the **Championships on the ladder** chips to pick which
    championship families appear — Motivational, your LSC, Zone / Sectionals,
    NCSA, ISCA, Futures / Juniors, and Nationals / Pro / Trials — or tap **All**.
-   Your picks are remembered on the device.
+   Motivational, your LSC and Zone are on by default; your picks are remembered
+   on the device.
 4. Add times to the session list and sort by level, or by "closest to next cut".
 
 **On your phone:** open <a href="https://jameswebapp.github.io/swim-cuts/" target="_blank" rel="noopener">the app</a>, then
