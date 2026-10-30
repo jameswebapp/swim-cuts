@@ -200,6 +200,13 @@ MD Jr Champs is a band, not a single cut: your time must be slower than the MD C
 </footer>
 <script>
 "use strict";
+let gcSig="";
+function gcTrack(o,t){
+  if(t==null||!window.goatcounter||!window.goatcounter.count)return;
+  const sig=[o.lsc,o.gender,o.mode,o.age,o.course,o.event].join("|");
+  if(sig===gcSig)return; gcSig=sig;
+  try{window.goatcounter.count({path:"/lookup/"+o.lsc+"/"+o.event,title:"Lookup "+o.lsc+" "+o.event,event:true})}catch(e){}
+}
 let DATA=[];
 const EVENTS={
  FR:{name:"Freestyle",dists:{SCY:[50,100,200,500,1000,1650],SCM:[50,100,200,400,800,1500],LCM:[50,100,200,400,800,1500]}},
@@ -347,6 +354,7 @@ function update(){
   disp.value=t==null?state.raw:fmt(t);disp.classList.toggle("empty",t==null);
   const o={gender:state.gender,age:state.age,mode:state.mode,course:state.course,lsc:state.lsc,event:curEvent(),fams:state.fams};
   const ev=evaluate(DATA,o,t==null?Infinity:t);
+  gcTrack(o,t);
   const badge=$("badge"),nextLine=$("nextLine");
   if(t==null){badge.textContent="Enter a time";badge.className="badge none";nextLine.innerHTML="";$("bar").style.width="0%";$("barLeft").textContent="";$("barRight").textContent=""}
   else{
@@ -438,6 +446,10 @@ if(window.__EMBEDDED_DATA__){DATA=window.__EMBEDDED_DATA__;$("recCount").textCon
 else fetch("standards.json").then(r=>r.json()).then(d=>{DATA=d;$("recCount").textContent=d.length.toLocaleString();init()}).catch(()=>{$("recCount").textContent="load failed";init()});
 if("serviceWorker" in navigator&&location.protocol.startsWith("http"))navigator.serviceWorker.register("sw.js").catch(()=>{});
 }
+</script>
+<script>
+window.__gcCode="swimcuts";
+if(window.__gcCode&&location.protocol.indexOf("http")===0){var gcs=document.createElement("script");gcs.async=true;gcs.src="https://gc.zgo.at/count.js";gcs.setAttribute("data-goatcounter","https://"+window.__gcCode+".goatcounter.com/count");document.body.appendChild(gcs);}
 </script>
 </body>
 </html>
