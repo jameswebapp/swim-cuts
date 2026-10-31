@@ -215,7 +215,7 @@ const EVENTS={
  FL:{name:"Butterfly",dists:{SCY:[50,100,200],SCM:[50,100,200],LCM:[50,100,200]}},
  IM:{name:"IM",dists:{SCY:[100,200,400],SCM:[100,200,400],LCM:[200,400]}}
 };
-const SRCNAMES={ez_sectionals:"EZ Sectionals",futures:"Futures",winter_juniors:"Winter Jr",summer_juniors:"Summer Jr",ncsa_juniors_spring:"NCSA Jr (Spring)",ncsa_summer:"NCSA Jr (Summer)",us_nationals:"U.S. Nationals",us_open:"U.S. Open",olympic_trials:"Olympic Trials"};
+const SRCNAMES={ez_sectionals:"EZ Sectionals",futures:"Futures",winter_juniors:"Winter Jr",summer_juniors:"Summer Jr Nationals",ncsa_juniors_spring:"NCSA Jr (Spring)",ncsa_summer:"NCSA Jr (Summer)",us_nationals:"U.S. Nationals",us_open:"U.S. Open",olympic_trials:"Olympic Trials"};
 const OPEN_SRC=new Set(["ez_sectionals","us_nationals","us_open","olympic_trials"]);
 function ageGroupOf(age){return age<=10?"10U":age<=12?"11-12":age<=14?"13-14":age<=16?"15-16":age<=18?"17-18":"19+"}
 function fmt(sec){if(sec==null||isNaN(sec))return"--.--";sec=Math.round(sec*100)/100;const m=Math.floor(sec/60),s=sec-m*60;return m>0?m+":"+(s<10?"0":"")+s.toFixed(2):s.toFixed(2)}
