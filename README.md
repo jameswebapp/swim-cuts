@@ -36,7 +36,7 @@ stay on your device (localStorage) — nothing is uploaded.
    the next cut and exactly how many seconds away it is.
    Too many rungs? Use the **Championships on the ladder** chips to pick which
    championship families appear — Motivational, your LSC, Zone / Sectionals,
-   NCSA, ISCA, Futures / Juniors, and Nationals / Pro / Trials — or tap **All**.
+   NCSA, ISCA, YMCA, Futures / Juniors, and Nationals / Pro / Trials — or tap **All**.
    Motivational, your LSC and Zone are on by default; your picks are remembered
    on the device.
 4. Add times to the session list and sort by level, or by "closest to next cut".
@@ -47,7 +47,7 @@ stay on your device (localStorage) — nothing is uploaded.
 
 It then behaves like a native app — full screen and offline at the pool deck.
 
-## What's inside (19,223 standards)
+## What's inside (19,701 standards)
 
 | Set | Edition |
 |---|---|
@@ -71,6 +71,8 @@ It then behaves like a native app — full screen and offline at the pool deck.
 | U.S. Nationals (18&U and 19&Over tables) / U.S. Open | 2026 |
 | ISCA Senior Cup / East Coast Elite Showcase | 2027 |
 | ISCA Summer Elite Showcase / Summer Senior Blast | 2026 |
+| YMCA Nationals — Short Course + Long Course (open table, SCY/SCM/LCM) | 2027 |
+| NJ YMCA State / Silver / Bronze Champs (SCY) | 2026 |
 | TYR Pro Swim Series — Nashville & Westmont / Fort Lauderdale (each 19&Over + 18&U) | 2027 |
 | Open Water Nationals & Jr Nationals (pool-time standards) | 2027 |
 | U.S. Olympic Team Trials (LCM only, as published) | 2028 |
