@@ -341,6 +341,7 @@ if(typeof module!=="undefined")module.exports={buildLadder,evaluate,fmt,ageGroup
 if(typeof document!=="undefined"){
 const $=id=>document.getElementById(id);
 const state={gender:"M",age:11,mode:"group",course:"SCY",lsc:"MD",stroke:"FR",dist:50,raw:"",sort:"rank"};
+try{const sl=localStorage.getItem("swimcuts.lsc");if(sl&&[...$("lscSel").options].some(o=>o.value===sl))state.lsc=sl}catch(e){}
 let entries=[];try{entries=JSON.parse(localStorage.getItem("swimcuts.entries")||"[]")}catch(e){entries=[]}
 function curEvent(){return state.dist+state.stroke}
 function curTime(){return parseInput(state.raw)}
@@ -431,7 +432,7 @@ function init(){
   segWire("segGender","gender",update);segWire("segMode","mode",update);
   segWire("segCourse","course",()=>{const ds=EVENTS[state.stroke].dists[state.course];if(!ds.includes(state.dist))state.dist=ds[0];renderDists();update()});
   $("lscSel").onchange=e=>{state.lsc=e.target.value;applyRefs();update()};
-  const applyRefs=()=>{const v=state.lsc;$("refsLscSel").value=v;document.querySelectorAll("#refsLocal li").forEach(li=>{li.style.display=li.dataset.lsc===v?"":"none"})};
+  const applyRefs=()=>{const v=state.lsc;$("lscSel").value=v;$("refsLscSel").value=v;try{localStorage.setItem("swimcuts.lsc",v)}catch(e){}document.querySelectorAll("#refsLocal li").forEach(li=>{li.style.display=li.dataset.lsc===v?"":"none"})};
   $("refsLscSel").onchange=e=>{state.lsc=e.target.value;$("lscSel").value=state.lsc;applyRefs();update()};
   applyRefs();
   $("ageMinus").onclick=()=>{if(state.age>5){state.age--;update()}};
