@@ -47,7 +47,7 @@ stay on your device (localStorage) — nothing is uploaded.
 
 It then behaves like a native app — full screen and offline at the pool deck.
 
-## What's inside (18,755 standards)
+## What's inside (19,223 standards)
 
 | Set | Edition |
 |---|---|
@@ -64,6 +64,7 @@ It then behaves like a native app — full screen and offline at the pool deck.
 | Sierra Nevada (SN) LSC Championships — 14&U SC / LC / Senior / Summer Sanders SR+ | 2026 |
 | Central California (CC) LSC Championships — Age Group + two Senior meets | 2026 |
 | San Diego-Imperial (SI) LSC Championships — Age Group + Winter AG | 2024–2027 |
+| New Jersey (NJ) LSC Championships — Silver / Gold (SCY + LCM) | 2026–2027 |
 | Eastern Zone Age Group Champs (SC & LC) 2026 / Sectionals 2027 | 2026–2027 |
 | NCSA Age Group / NCSA Juniors (Spring & Summer) | 2026 (Age Group unchanged for 2027) |
 | Futures · Summer Juniors 2027 · Winter Juniors 2026 | 2026–2027 |
@@ -79,7 +80,7 @@ inside the app for the full list with links. Standards that were never
 published are never shown (no estimates, no conversions).
 
 > **Coverage note:** at the local (LSC) level this app currently covers
-> **Maryland, Potomac Valley (PVS), Virginia (VA), Middle Atlantic (MA), Metropolitan (MR), Niagara (NI) and Adirondack (AD)**, plus California's five LSCs — **Pacific (PC), Southern California (SCS), Sierra Nevada (SN), Central California (CC) and San Diego-Imperial (SI)** — more LSCs are being added one at a
+> **Maryland, Potomac Valley (PVS), Virginia (VA), Middle Atlantic (MA), Metropolitan (MR), Niagara (NI) and Adirondack (AD)**, plus California's five LSCs — **Pacific (PC), Southern California (SCS), Sierra Nevada (SN), Central California (CC) and San Diego-Imperial (SI)** — and **New Jersey (NJ)** — more LSCs are being added one at a
 > time. The national and Eastern Zone sets above apply to
 > everyone. Two neighbors need no data of their own: **Allegheny Mountain
 > (AM)** championships key off the USA Swimming Motivational standards
